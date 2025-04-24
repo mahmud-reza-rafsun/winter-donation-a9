@@ -15,7 +15,9 @@ const Navbar = () => {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="donation-campaigns">Donation Campaigns</NavLink></li>
                         <li><NavLink to="how-to-help">How to Help</NavLink></li>
-                        <li><NavLink to="dashboard">Dashboard</NavLink></li>
+                        {
+                            user && <li><NavLink to="dashboard">Dashboard</NavLink></li>
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -40,7 +42,9 @@ const Navbar = () => {
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="donation-campaigns">Donation Campaigns</NavLink></li>
                             <li><NavLink to="how-to-help">How to Help</NavLink></li>
-                            <li><NavLink to="dashboard">Dashboard</NavLink></li>
+                            {
+                                user && <li><NavLink to="dashboard">Dashboard</NavLink></li>
+                            }
                             <div className="flex gap-4 my-3">
                                 {
                                     user ?

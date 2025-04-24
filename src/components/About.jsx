@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className="">
             <h2 className="text-center font-semibold text-3xl ">About <span className="text-sky-500">Us</span> </h2>
-            <div className="py-5 flex justify-center items-center gap-10">
+            <div className="flex gap-10 flex-col lg:flex-row items-center justify-center py-5">
                 <div>
                     <img src={AboutImg} className="rounded-md" alt="" />
                 </div>
@@ -18,9 +18,9 @@ const About = () => {
                 </div>
             </div>
             <div>
-                <h3 className="text-2xl font-semibold text-center py-5">Why Donate Winter <span className="text-sky-500">Clothes to our Org?</span> </h3>
-                <div className="flex justify-center items-center gap-5">
-                    <div className="space-y-4 w-3/6 mt-5">
+                <h3 className="text-xl lg:text-2xl font-semibold text-center py-5">Why Donate Winter <span className="text-sky-500">Clothes to our Org?</span> </h3>
+                <div className="flex flex-col-reverse lg:flex-row items-center justify-center py-5 gap-5">
+                    <div className="space-y-2 lg:space-y-4 w-full lg:w-3/6 mt-2 lg:mt-5">
                         <div tabIndex={0} className="collapse collapse-arrow border-sky-500 bg-sky-500 text-white border">
                             <div className="collapse-title text-xl font-medium">Spreading Warmth, Saving Lives</div>
                             <div className="collapse-content">
@@ -58,7 +58,7 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-3/6">
+                    <div className="w-full lg:w-3/6">
                         <img src={AboutChildImg} className="rounded-md" alt="" />
                     </div>
                 </div>
