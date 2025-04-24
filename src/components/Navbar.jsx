@@ -46,37 +46,15 @@ const Navbar = () => {
                                 user && <li><NavLink to="dashboard">Dashboard</NavLink></li>
                             }
                             <div className="flex gap-4 my-3">
-                                {
-                                    user ?
-                                        <>
-                                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                                <div className="w-12 rounded-full">
-                                                    <img src={user?.photoURL} />
-                                                </div>
-                                            </div>
-                                            <button onClick={signOutUser} className="btn">Log Out</button>
-                                        </>
-                                        :
-                                        <Link to="/login" className="btn">Login</Link>
-                                }
+                                <Link to="/login" className="btn">Login</Link>
                             </div>
                         </ul>
                     </div>
                     <div className="hidden lg:block">
                         <div className="flex gap-4">
-                            {
-                                user ?
-                                    <>
-                                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                            <div className="w-12 rounded-full">
-                                                <img src={user?.photoURL} />
-                                            </div>
-                                        </div>
-                                        <button onClick={signOutUser} className="btn">Log Out</button>
-                                    </>
-                                    :
-                                    <Link to="/login" className="btn">Login</Link>
-                            }
+                            <div className="flex gap-4 my-3">
+                                <Link to="/login" className="btn">Login</Link>
+                            </div>
                         </div>
                     </div>
                 </div>
