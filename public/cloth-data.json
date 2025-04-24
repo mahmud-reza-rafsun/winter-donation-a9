@@ -1,0 +1,56 @@
+[
+  {
+    "d": 1,
+    "title": "Children's Winter Jackets",
+    "image": "https://ibb.co.com/d4Q3sRFf",
+    "description": "Two cozy winter jackets for kids aged 5–7. Washed and ready for use.",
+    "status": "Available",
+    "contactInfo": "rahim@donate.org | +8801700112233",
+    "division": "Dhaka"
+  },
+  {
+    "d": 2,
+    "title": "Blankets for the Elderly",
+    "image": "https://ibb.co.com/hRG9bt1R",
+    "description": "Soft and heavy blankets suitable for elderly people during winter nights.",
+    "status": "Available",
+    "contactInfo": "seniorcare@relief.com | +8801600223344",
+    "division": "Barisal"
+  },
+  {
+    "d": 3,
+    "title": "Men’s Full Sleeve Sweaters",
+    "image": "https://ibb.co.com/qLZb0fP2",
+    "description": "Set of 4 full sleeve wool sweaters. Sizes range from M to XL.",
+    "status": "Claimed",
+    "contactInfo": "warmhearts@gmail.com | +8801911005566",
+    "division": "Rajshahi"
+  },
+  {
+    "d": 4,
+    "title": "Women's Shawls & Scarves",
+    "image": "https://ibb.co.com/HfNTHcGZ",
+    "description": "Various styles and colors. Suitable for adult women. Light to medium thickness.",
+    "status": "Available",
+    "contactInfo": "shifa@hope.org | +8801888331122",
+    "division": "Sylhet"
+  },
+  {
+    "d": 5,
+    "title": "Infant Winter Set",
+    "image": "https://ibb.co.com/Vpg2y4kc",
+    "description": "Includes baby caps, mittens, sweaters, and socks. Soft and comfy for babies up to 1 year old.",
+    "status": "Available",
+    "contactInfo": "tinycare@donationhub.org | +8801555223344",
+    "division": "Khulna"
+  },
+  {
+    "d": 6,
+    "title": "Winter Boots Collection",
+    "image": "https://ibb.co.com/cXkKm2Dx",
+    "description": "Mixed-size winter boots for men and women. Gently used but in very good condition.",
+    "status": "Available",
+    "contactInfo": "feetfirst@warmhelp.com | +8801777009900",
+    "division": "Chattogram"
+  }
+]
