@@ -1,9 +1,19 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
+    const handleLogOut = () => {
+        signOutUser()
+            .then(res => {
+                toast.success('Log Out Successfull')
+            })
+            .catch(error => {
+                toast.error(`${error.message}`)
+            })
+    }
     return (
         <div className="bg-sky-500 sticky top-0 z-50">
             <div className="w-11/12 mx-auto navbar">
@@ -15,9 +25,7 @@ const Navbar = () => {
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="donation-campaigns">Donation Campaigns</NavLink></li>
                         <li><NavLink to="how-to-help">How to Help</NavLink></li>
-                        {
-                            user && <li><NavLink to="dashboard">Dashboard</NavLink></li>
-                        }
+                        <li><NavLink to="dashboard">Dashboard</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
@@ -42,20 +50,21 @@ const Navbar = () => {
                             <li><NavLink to="/">Home</NavLink></li>
                             <li><NavLink to="donation-campaigns">Donation Campaigns</NavLink></li>
                             <li><NavLink to="how-to-help">How to Help</NavLink></li>
-                            {
-                                user && <li><NavLink to="dashboard">Dashboard</NavLink></li>
-                            }
+                            <li><NavLink to="dashboard">Dashboard</NavLink></li>
                             <div className="flex gap-4 my-3">
                                 <Link to="/login" className="btn">Login</Link>
                             </div>
                         </ul>
                     </div>
-                    <div className="hidden lg:block">
-                        <div className="flex gap-4">
-                            <div className="flex gap-4 my-3">
+                    <div className="hidden lg:block ">
+                        {
+                            user ?
+                                <>
+                                    <button onClick={handleLogOut} className="btn btn-error text-white">Log Out</button>
+                                </>
+                                :
                                 <Link to="/login" className="btn">Login</Link>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>

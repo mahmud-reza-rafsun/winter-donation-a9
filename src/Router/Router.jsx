@@ -7,6 +7,7 @@ import Dashboard from "../Pages/Dashboard";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Donation from "../components/Donation";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -28,7 +29,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard',
-                element: <Dashboard />
+                element: <PrivetRoute>
+                    <Dashboard />
+                </PrivetRoute>
             },
             {
                 path: '/login',
@@ -40,7 +43,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/donation/:id',
-                element: <Donation />,
+                element: <PrivetRoute>
+                    <Donation />
+                </PrivetRoute>,
                 loader: async ({ params }) => {
                     const res = await fetch(`/cloth-data.json`);
                     const data = await res.json();
