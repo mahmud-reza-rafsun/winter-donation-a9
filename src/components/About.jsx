@@ -4,8 +4,8 @@ import AboutChildImg from '../assets/Gorkha-10.jpg'
 const About = () => {
     return (
         <div className="">
-            <h2 className="text-center font-semibold text-2xl lg:text-4xl pb-6">About <span className="text-sky-500">Us</span> </h2>
-            <div className="flex gap-10 flex-col lg:flex-row items-center justify-center py-5">
+            <h2 className="text-center font-semibold text-2xl lg:text-3xl pb-3 lg:pb-6">About <span className="text-sky-500">Us</span> </h2>
+            <div className="flex gap-10 flex-col lg:flex-row items-center justify-center py-3 lg:py-5">
                 <div>
                     <img src={AboutImg} className="rounded-md" alt="" />
                 </div>
