@@ -9,6 +9,7 @@ import Register from "../components/Register";
 import Donation from "../components/Donation";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import ForgetPassword from "../components/ForgetPassword";
+import UpdateProfile from "../components/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
             {
                 path: '/forget-password',
                 element: <ForgetPassword />
+            },
+            {
+                path: '/update-profile',
+                element: <UpdateProfile />
             }
         ]
     }
