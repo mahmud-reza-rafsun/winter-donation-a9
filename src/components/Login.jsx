@@ -15,6 +15,21 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email, password);
 
+        // password validation
+        if (password.length < 6) {
+            toast.error('Password should be 6 charector or longor')
+        }
+        const regex = {
+            lowercase: /[a-z]/g,
+            uppercase: /[A-Z]/g
+        };
+
+        if (!regex.uppercase.test(password)) {
+            return toast.error('Password must contain at least one uppercase letter');
+        }
+        else if (!regex.lowercase.test(password)) {
+            return toast.error('Password must contain at least one uppercase letter');
+        }
 
         // login user
         loginWithEmail(email, password)
@@ -23,8 +38,9 @@ const Login = () => {
                 navigate(location?.state?.from)
             })
             .catch(error => {
-                toast.error(`${error.message}`);
+                toast.error((error.message.match(/\(auth\/([^)]+)\)/)?.[1] || 'something-went-wrong').replace(/-/g, ' '))
             })
+
     }
     const handleGoogleSignIn = () => {
         signInWithGoogle()
@@ -55,13 +71,16 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input name="password" type={showPassword ? "text" : "password"} placeholder="password" className="input input-bordered" required />
+                            <label className="label">
+                                <Link to="/forget-password" className="label-text-alt link link-hover">Forgot password?</Link>
+                            </label>
                             <div onClick={() => setShowPassword(!showPassword)} className="btn btn-xs absolute top-12 right-4">
                                 {
                                     showPassword ? <FaEyeSlash /> : <FaEye />
                                 }
                             </div>
                         </div>
-                        <div className="form-control mt-3">
+                        <div className="form-control">
                             <button className="btn bg-sky-500 hover:bg-sky-600 text-white">Login</button>
                         </div>
                     </form>

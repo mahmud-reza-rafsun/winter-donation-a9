@@ -8,6 +8,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Donation from "../components/Donation";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import ForgetPassword from "../components/ForgetPassword";
 
 const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
                     const singleData = data.find((data) => data?.id == params?.id);
                     return singleData;
                 }
+            },
+            {
+                path: '/forget-password',
+                element: <ForgetPassword />
             }
         ]
     }

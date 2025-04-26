@@ -15,6 +15,22 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        // password validation
+        if (password.length < 6) {
+            toast.error('Password should be 6 charector or longor')
+        }
+        const regex = {
+            lowercase: /[a-z]/g,
+            uppercase: /[A-Z]/g
+        };
+
+        if (!regex.uppercase.test(password)) {
+            return toast.error('Password must contain at least one uppercase letter');
+        }
+        else if (!regex.lowercase.test(password)) {
+            return toast.error('Password must contain at least one lowercase letter');
+        }
+
         // create user
         createUserWithEmail(email, password)
             .then(res => {
@@ -23,13 +39,13 @@ const Register = () => {
                 navigate('/')
             })
             .catch(error => {
-                toast.error(`${error.message.split("/")[1].slice(0, 20)}`)
+                toast.error((error.message.match(/\(auth\/([^)]+)\)/)?.[1] || 'something-went-wrong').replace(/-/g, ' '))
             })
     }
     const hadnleGoogleLogin = () => {
         signInWithGoogle()
             .then(res => {
-                toast.success('Log In Successfull')
+                toast.success('Register SuccessfullLog In Successfull')
             })
             .catch(error => {
                 toast.error(`${error.message}`)
@@ -87,7 +103,7 @@ const Register = () => {
                             Login with Google
                         </button>
                     </div>
-                    <p className="text-sm pl-8 pb-3">Already have an account? <Link className="text-sky-500 underline">Login</Link></p>
+                    <p className="text-sm pl-8 pb-3">Already have an account? <Link to="/login" className="text-sky-500 underline">Login</Link></p>
                 </div>
             </div >
         </div >
