@@ -1,6 +1,9 @@
+import toast from "react-hot-toast";
+
 const Modal = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
+
     }
     return (
         <div>
@@ -54,7 +57,7 @@ const Modal = () => {
                                         </div>
                                     </label>
                                     <div className="form-control">
-                                        <button className="btn bg-sky-500 hover:bg-sky-600 text-white">Submit</button>
+                                        <button onClick={handleSubmit} className="btn bg-sky-500 hover:bg-sky-600 text-white">Submit</button>
                                     </div>
                                 </form>
                             </div>
