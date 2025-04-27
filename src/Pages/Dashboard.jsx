@@ -20,7 +20,7 @@ const Dashboard = () => {
                             <p>{user?.email}</p>
                         </div>
                     </div>
-                    <Link to="/update-profile" data-aos="fade-up">
+                    <Link to="/update-profile" data-aos="fade-left">
                         <button className="btn bg-sky-500 hover:bg-sky-600 text-white w-fit mx-auto absolute top-[230px] lg:top-[135px] right-0 left-0">Update Profile</button>
                     </Link>
                 </div>

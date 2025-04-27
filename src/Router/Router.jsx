@@ -10,11 +10,13 @@ import Donation from "../components/Donation";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
 import ForgetPassword from "../components/ForgetPassword";
 import UpdateProfile from "../components/UpdateProfile";
+import ErrorPage from "../Layout/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: '/',
