@@ -4,13 +4,13 @@ const DonationCard = ({ data }) => {
     const { id, title, image, description, status, contactInfo, division, } = data || {};
     return (
         <div className="border p-4 rounded-md">
-            <figure>
+            <figure data-aos="fade-right">
                 <img
                     src={image}
                     className="rounded-md w-full h-100px"
                     alt="Shoes" />
             </figure>
-            <div className="space-y-3 mt-4">
+            <div className="space-y-3 mt-4" data-aos="fade-left">
                 <h2 className="card-title">{title}</h2>
                 <p>{description}</p>
                 <div className="card-actions justify-center">

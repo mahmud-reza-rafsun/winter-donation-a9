@@ -6,10 +6,10 @@ const About = () => {
         <div className="">
             <h2 className="text-center font-semibold text-2xl lg:text-3xl pb-3 lg:pb-6">About <span className="text-sky-500">Us</span> </h2>
             <div className="flex gap-10 flex-col lg:flex-row items-center justify-center py-3 lg:py-5">
-                <div>
+                <div data-aos="fade-right">
                     <img src={AboutImg} className="rounded-md" alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-left">
                     <h1 className="text-xl lg:text-3xl font-semibold">Warm Hearts, Warm Hands.</h1>
                     <p className="py-3">
                         emphasizes both emotional warmth compassion, kindness and physical warmth donating clothes. Your message should highlight
@@ -20,7 +20,7 @@ const About = () => {
             <div>
                 <h3 className="text-xl lg:text-2xl font-semibold text-center pt-3">Why Donate Winter <span className="text-sky-500">Clothes to our Org?</span> </h3>
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-center py-5 gap-5">
-                    <div className="space-y-2 lg:space-y-4 w-full lg:w-3/6 mt-2 lg:mt-5">
+                    <div className="space-y-2 lg:space-y-4 w-full lg:w-3/6 mt-2 lg:mt-5" data-aos="fade-up-right">
                         <div tabIndex={0} className="collapse collapse-arrow border-sky-500 bg-sky-500 text-white border">
                             <div className="collapse-title text-lg lg:text-xl font-medium">Spreading Warmth, Saving Lives</div>
                             <div className="collapse-content">
@@ -58,7 +58,7 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-3/6">
+                    <div className="w-full lg:w-3/6" data-aos="fade-up-left">
                         <img src={AboutChildImg} className="rounded-md" alt="" />
                     </div>
                 </div>

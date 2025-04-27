@@ -8,6 +8,9 @@ const UpdateProfile = () => {
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
+        if (!name && !photo) {
+            return toast.error('Name and Photo URL cannot be empty!');
+        }
 
         // update profile
         manageProfile(name, photo)
@@ -15,7 +18,7 @@ const UpdateProfile = () => {
                 toast.success('Profile Updated')
                 setTimeout(() => {
                     window.location.reload();
-                }, 1)
+                }, 400)
             })
             .catch(error => {
                 toast.error(error.message)
@@ -25,7 +28,7 @@ const UpdateProfile = () => {
         <div className="hero bg-base-200 rounded-md py-4">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-xl lg:text-3xl font-semibold">Update Profile</h1>
+                    <h1 className="font-semibold text-2xl lg:text-3xl">Update Profile</h1>
                 </div>
                 <div className="card bg-base-100 max-w-[300px] md:max-w-[350px] lg:max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleUpdateProfile} className="card-body">
