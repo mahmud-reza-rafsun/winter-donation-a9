@@ -12,7 +12,7 @@ const Review = () => {
     console.log(user);
     return (
         <div>
-            <h2 className="text-center font-semibold text-2xl lg:text-3xl pb-3 lg:pb-6">Our Global <span className="text-sky-500">Review</span> </h2>
+            <h2 className="text-center font-semibold text-2xl lg:text-3xl pb-6">Our Global <span className="text-sky-500">Review</span> </h2>
             <Marquee pauseOnHover={true} speed={150}>
                 <div className="grid grid-cols-6 gap-4 pl-4">
                     {

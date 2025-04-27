@@ -7,7 +7,7 @@ const Banner = () => {
                 <img src={BannerImg} className="rounded-md" />
             </div>
             <div>
-                <h1 className="text-2xl lg:text-4xl font-bold">Warm Clothes, Warmer Hearts.</h1>
+                <h1 className="text-xl lg:text-3xl font-semibold">Warm Clothes, Warmer Hearts.</h1>
                 <p className="py-3">
                     This winter, let kindness be your coziest gift. Through your simple act of donating warm clothes, you can bring comfort, dignity, and hope to someone facing the cold without shelter. Every jacket, sweater, or scarf you give wraps another human being
                 </p>

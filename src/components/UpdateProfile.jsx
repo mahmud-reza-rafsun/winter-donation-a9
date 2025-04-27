@@ -7,13 +7,15 @@ const UpdateProfile = () => {
     const handleUpdateProfile = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
-        const photo = e.target.photo.value
-        console.log(name, photo)
+        const photo = e.target.photo.value;
 
         // update profile
         manageProfile(name, photo)
             .then(res => {
                 toast.success('Profile Updated')
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1)
             })
             .catch(error => {
                 toast.error(error.message)
@@ -23,9 +25,9 @@ const UpdateProfile = () => {
         <div className="hero bg-base-200 rounded-md py-4">
             <div className="hero-content flex-col">
                 <div className="text-center lg:text-left">
-                    <h1 className="text-3xl font-semibold">Update Profile</h1>
+                    <h1 className="text-xl lg:text-3xl font-semibold">Update Profile</h1>
                 </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                <div className="card bg-base-100 max-w-[300px] md:max-w-[350px] lg:max-w-sm shrink-0 shadow-2xl">
                     <form onSubmit={handleUpdateProfile} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -39,7 +41,7 @@ const UpdateProfile = () => {
                             </label>
                             <input name="photo" type="text" placeholder="photo URL" className="input input-bordered" />
                         </div>
-                        <div className="form-control mt-4">
+                        <div className="form-control mt-2">
                             <button className="btn bg-sky-500 hover:bg-sky-600 text-white">Update</button>
                         </div>
                     </form>

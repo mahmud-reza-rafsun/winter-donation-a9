@@ -35,20 +35,21 @@ const Register = () => {
         createUserWithEmail(email, password)
             .then(res => {
                 manageProfile(name, photo)
-                toast.success('Register Successfull')
-                navigate('/')
+                toast.success('Register Successfull');
+                navigate('/');
             })
             .catch(error => {
-                toast.error((error.message.match(/\(auth\/([^)]+)\)/)?.[1] || 'something-went-wrong').replace(/-/g, ' '))
+                toast.error((error.message.match(/\(auth\/([^)]+)\)/)?.[1] || 'something-went-wrong').replace(/-/g, ' '));
             })
     }
     const hadnleGoogleLogin = () => {
         signInWithGoogle()
             .then(res => {
-                toast.success('Register SuccessfullLog In Successfull')
+                toast.success('Register SuccessfullLog In Successfull');
+                navigate('/');
             })
             .catch(error => {
-                toast.error(`${error.message}`)
+                toast.error(`${error.message}`);
             })
     }
     return (

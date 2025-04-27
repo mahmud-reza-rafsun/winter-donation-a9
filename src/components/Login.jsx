@@ -46,7 +46,7 @@ const Login = () => {
         signInWithGoogle()
             .then(res => {
                 console.log(res.user);
-                navigate(location?.state?.from)
+                navigate("/")
             })
             .catch(error => {
                 console.log(error.message);

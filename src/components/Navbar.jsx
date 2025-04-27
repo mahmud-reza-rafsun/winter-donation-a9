@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="bg-sky-500 sticky top-0 z-50">
             <div className="w-11/12 mx-auto navbar">
                 <div className="navbar-start">
-                    <Link to="/" className="text-xl lg:text-2xl font-semibold cursor-pointer text-white">ColdCare Network</Link>
+                    <Link to="/" className="text-md md:text-xl lg:text-2xl font-bold lg:font-semibold cursor-pointer text-white">ColdCare Network</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-white">
@@ -52,16 +52,41 @@ const Navbar = () => {
                             <li><NavLink to="how-to-help">How to Help</NavLink></li>
                             <li><NavLink to="dashboard">Dashboard</NavLink></li>
                             <div className="flex gap-4 my-3">
-                                <Link to="/login" className="btn">Login</Link>
+                                {
+                                    user ?
+                                        <div className="flex justify-center items-center gap-4">
+                                            <div role="button" className="btn btn-ghost btn-circle avatar">
+                                                {
+                                                    user && <div className="w-10 rounded-full">
+                                                        <img
+                                                            alt={user?.displayName}
+                                                            src={user?.photoURL} />
+                                                    </div>
+                                                }
+                                            </div>
+                                            <button onClick={handleLogOut} className="btn btn-error text-white">Log Out</button>
+                                        </div>
+                                        :
+                                        <Link to="/login" className="btn">Login</Link>
+                                }
                             </div>
                         </ul>
                     </div>
                     <div className="hidden lg:block ">
                         {
                             user ?
-                                <>
+                                <div className="flex justify-center items-center gap-4">
+                                    <div role="button" className="btn btn-ghost btn-circle avatar">
+                                        {
+                                            user && <div className="w-10 rounded-full">
+                                                <img
+                                                    alt={user?.displayName}
+                                                    src={user?.photoURL} />
+                                            </div>
+                                        }
+                                    </div>
                                     <button onClick={handleLogOut} className="btn btn-error text-white">Log Out</button>
-                                </>
+                                </div>
                                 :
                                 <Link to="/login" className="btn">Login</Link>
                         }
